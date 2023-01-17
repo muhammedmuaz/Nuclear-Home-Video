@@ -3,9 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:testapp/TvScreens/tvsignInScreen.dart';
-
 import '../constants.dart';
-import '../view/StartScreens/forgot_password.dart';
 
 class TvSignUpScreen extends StatefulWidget {
   const TvSignUpScreen({super.key});
