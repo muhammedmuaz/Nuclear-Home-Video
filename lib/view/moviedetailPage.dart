@@ -78,7 +78,7 @@ class _MovieDetailState extends State<MovieDetail> {
                         children: [
                           CachedNetworkImage(
                             imageUrl: controller.movie_detail_Model!
-                                .videoStreamingApp.movieImage,
+                                .videoStreamingApp.movieImage!,
                             fit: BoxFit.fill,
                             height: double.infinity,
                             width: double.infinity,
@@ -201,7 +201,7 @@ class _MovieDetailState extends State<MovieDetail> {
                                   children: [
                                     TextWidget(
                                         text: controller.movie_detail_Model!
-                                            .videoStreamingApp.movieTitle),
+                                            .videoStreamingApp.movieTitle!),
                                     const SizedBox(
                                       height: 15,
                                     ),
@@ -214,7 +214,7 @@ class _MovieDetailState extends State<MovieDetail> {
                                             controller
                                                 .movie_detail_Model!
                                                 .videoStreamingApp
-                                                .genreList
+                                                .genreList!
                                                 .length,
                                             (index) => Row(
                                                   children: [
@@ -225,7 +225,7 @@ class _MovieDetailState extends State<MovieDetail> {
                                                       controller
                                                           .movie_detail_Model!
                                                           .videoStreamingApp
-                                                          .genreList[index]
+                                                          .genreList![index]
                                                           .genreName,
                                                       style: GoogleFonts.inter(
                                                           color: Colors.white,
@@ -234,7 +234,7 @@ class _MovieDetailState extends State<MovieDetail> {
                                                     controller
                                                                 .movie_detail_Model!
                                                                 .videoStreamingApp
-                                                                .genreList
+                                                                .genreList!
                                                                 .length >
                                                             1
                                                         ? const SizedBox(
@@ -244,7 +244,7 @@ class _MovieDetailState extends State<MovieDetail> {
                                                     controller
                                                                 .movie_detail_Model!
                                                                 .videoStreamingApp
-                                                                .genreList
+                                                                .genreList!
                                                                 .length >
                                                             1
                                                         ? const CircleAvatar(
@@ -313,12 +313,14 @@ class _MovieDetailState extends State<MovieDetail> {
                                         GestureDetector(
                                           onTap: () async {
                                             await controller.MoviePlay(
-                                                controller.movie_detail_Model!
-                                                    .videoStreamingApp.videoUrl,
                                                 controller
                                                     .movie_detail_Model!
                                                     .videoStreamingApp
-                                                    .moviesSubtitle
+                                                    .videoUrl!,
+                                                controller
+                                                    .movie_detail_Model!
+                                                    .videoStreamingApp
+                                                    .moviesSubtitle!
                                                     .first);
                                             Get.to(VideoItem(
                                               videoPlayerController:
@@ -437,7 +439,7 @@ class _MovieDetailState extends State<MovieDetail> {
                                                                   controller
                                                                       .movie_detail_Model!
                                                                       .videoStreamingApp
-                                                                      .movieId);
+                                                                      .movieId!);
                                                         },
                                                         child: Container(
                                                           width: 40,
@@ -467,7 +469,7 @@ class _MovieDetailState extends State<MovieDetail> {
                                                               controller
                                                                   .movie_detail_Model!
                                                                   .videoStreamingApp
-                                                                  .movieId);
+                                                                  .movieId!);
                                                     },
                                                     child: Container(
                                                       width: 40,
@@ -536,7 +538,7 @@ class _MovieDetailState extends State<MovieDetail> {
                           ),
                           AutoSizeText(
                               controller.movie_detail_Model!.videoStreamingApp
-                                  .description,
+                                  .description!,
                               style: const TextStyle(
                                   color: Colors.grey, fontSize: 16)),
                           const SizedBox(
@@ -624,7 +626,7 @@ class _MovieDetailState extends State<MovieDetail> {
                           ListView.builder(
                               physics: const NeverScrollableScrollPhysics(),
                               itemCount: controller.movie_detail_Model!
-                                  .videoStreamingApp.relatedMovies.length,
+                                  .videoStreamingApp.relatedMovies!.length,
                               shrinkWrap: true,
                               itemBuilder: (BuildContext context, index) {
                                 return Padding(
@@ -635,7 +637,7 @@ class _MovieDetailState extends State<MovieDetail> {
                                       await controller.MovieDetails(controller
                                           .movie_detail_Model!
                                           .videoStreamingApp
-                                          .relatedMovies[index]
+                                          .relatedMovies![index]
                                           .movieId
                                           .toString());
                                     },
@@ -643,23 +645,23 @@ class _MovieDetailState extends State<MovieDetail> {
                                       episodeTitle: controller
                                           .movie_detail_Model!
                                           .videoStreamingApp
-                                          .relatedMovies[index]
+                                          .relatedMovies![index]
                                           .movieTitle,
                                       EpisodeNumber: controller
                                           .movie_detail_Model!
                                           .videoStreamingApp
-                                          .relatedMovies[index]
+                                          .relatedMovies![index]
                                           .movieDuration
                                           .toString(),
                                       Imgurl: controller
                                           .movie_detail_Model!
                                           .videoStreamingApp
-                                          .relatedMovies[index]
+                                          .relatedMovies![index]
                                           .moviePoster,
                                       movieId: controller
                                           .movie_detail_Model!
                                           .videoStreamingApp
-                                          .relatedMovies[index]
+                                          .relatedMovies![index]
                                           .movieId,
                                     ),
                                   ),

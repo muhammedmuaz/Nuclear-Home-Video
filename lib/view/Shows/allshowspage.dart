@@ -110,13 +110,13 @@ class _AllshowsPageState extends State<AllshowsPage> {
                                   crossAxisSpacing: 10.0,
                                   crossAxisCount: 2,
                                   childAspectRatio: deviceheight < 550
-                                              ? 100 / 200
-                                              : deviceheight < 750
-                                                  ? 100 / 160
-                                                  : deviceheight < 750 &&
-                                                          devicewidth > 250
-                                                      ? 380 / 200
-                                                      : 100 / 140),
+                                      ? 100 / 200
+                                      : deviceheight < 750
+                                          ? 100 / 160
+                                          : deviceheight < 750 &&
+                                                  devicewidth > 250
+                                              ? 380 / 200
+                                              : 100 / 140),
                           children: List.generate(6, (index) {
                             return Column(
                               children: [
@@ -162,31 +162,31 @@ class _AllshowsPageState extends State<AllshowsPage> {
                                     return ShowCardWidget(
                                       showId: _showsController
                                           .allshows!.videoStreamingApp
-                                          .where((element) => element.showTitle
+                                          .where((element) => element.showTitle!
                                               .toLowerCase()
                                               .contains(_showsController
                                                   .assignString.value
                                                   .toLowerCase()))
                                           .toList()[index]
-                                          .showId,
+                                          .showId!,
                                       title: _showsController
                                           .allshows!.videoStreamingApp
-                                          .where((element) => element.showTitle
+                                          .where((element) => element.showTitle!
                                               .toLowerCase()
                                               .contains(_showsController
                                                   .assignString.value
                                                   .toLowerCase()))
                                           .toList()[index]
-                                          .showTitle,
+                                          .showTitle!,
                                       imgurl: _showsController
                                           .allshows!.videoStreamingApp
-                                          .where((element) => element.showTitle
+                                          .where((element) => element.showTitle!
                                               .toLowerCase()
                                               .contains(_showsController
                                                   .assignString.value
                                                   .toLowerCase()))
                                           .toList()[index]
-                                          .showPoster,
+                                          .showPoster!,
                                     );
                                   }));
                             })
@@ -212,11 +212,11 @@ class _AllshowsPageState extends State<AllshowsPage> {
                                       (index) {
                                     return ShowCardWidget(
                                       showId: _showsController.allshows!
-                                          .videoStreamingApp[index].showId,
+                                          .videoStreamingApp[index].showId!,
                                       title: _showsController.allshows!
-                                          .videoStreamingApp[index].showTitle,
+                                          .videoStreamingApp[index].showTitle!,
                                       imgurl: _showsController.allshows!
-                                          .videoStreamingApp[index].showPoster,
+                                          .videoStreamingApp[index].showPoster!,
                                     );
                                   }));
                             }),

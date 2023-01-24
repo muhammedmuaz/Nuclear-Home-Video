@@ -23,16 +23,17 @@ class showtextfield extends StatelessWidget {
                 onChanged: ((value) {
                   showcontroller.isusersearchedShowsPage.value = true;
                   showcontroller.assignString.value = value;
-                  print("///////////////////////////////////////////////////////////////////////////////////");
+                  print(
+                      "///////////////////////////////////////////////////////////////////////////////////");
                   print("CURRENT lENGTH");
                   print(showcontroller.allshows!.videoStreamingApp
                       .where((element) {
-                    return element.showTitle.toLowerCase().contains(
+                    return element.showTitle!.toLowerCase().contains(
                         showcontroller.assignString.value.toLowerCase());
                   }).length);
                   if (showcontroller.allshows!.videoStreamingApp
                           .where((element) {
-                        return element.showTitle.toLowerCase().contains(
+                        return element.showTitle!.toLowerCase().contains(
                             showcontroller.assignString.value.toLowerCase());
                       }).length <
                       8) {
@@ -40,7 +41,7 @@ class showtextfield extends StatelessWidget {
                     showcontroller.showsdisplaylength.value = showcontroller
                         .allshows!.videoStreamingApp
                         .where((element) {
-                      return element.showTitle.toLowerCase().contains(
+                      return element.showTitle!.toLowerCase().contains(
                           showcontroller.assignString.value.toLowerCase());
                     }).length;
                     print("Current Value");
@@ -49,7 +50,7 @@ class showtextfield extends StatelessWidget {
                     showcontroller.showstotallength.value = showcontroller
                         .allshows!.videoStreamingApp
                         .where((element) {
-                      return element.showTitle.toLowerCase().contains(
+                      return element.showTitle!.toLowerCase().contains(
                           showcontroller.assignString.value.toLowerCase());
                     }).length;
                     showcontroller.showsdisplaylength.value = 8;

@@ -45,7 +45,7 @@ class TvSignInScreenState extends State<TvSignInScreen> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         IconButton(
-                            onPressed: () =>Get.back(),
+                            onPressed: () => Get.back(),
                             icon: const Icon(
                               Icons.arrow_back,
                               color: Colors.white,

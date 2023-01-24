@@ -53,23 +53,23 @@ class VideoStreamingApp {
     required this.relatedMovies,
   });
 
-  int movieId;
-  String movieTitle;
-  String movieImage;
-  MovieAccess movieAccess;
-  List<String> moviesSubtitle;
-  String description;
-  String movieDuration;
-  String releaseDate;
-  String imdbRating;
-  String videoType;
-  String videoUrl;
-  String downloadEnable;
-  String downloadUrl;
-  int langId;
-  String languageName;
-  List<GenreList> genreList;
-  List<RelatedMovie> relatedMovies;
+  int? movieId;
+  String? movieTitle;
+  String? movieImage;
+  MovieAccess? movieAccess;
+  List<String>? moviesSubtitle;
+  String? description;
+  String? movieDuration;
+  String? releaseDate;
+  String? imdbRating;
+  String? videoType;
+  String? videoUrl;
+  String? downloadEnable;
+  String? downloadUrl;
+  int? langId;
+  String? languageName;
+  List<GenreList>? genreList;
+  List<RelatedMovie>? relatedMovies;
 
   factory VideoStreamingApp.fromJson(Map<String, dynamic> json) =>
       VideoStreamingApp(
@@ -100,7 +100,7 @@ class VideoStreamingApp {
         "movie_title": movieTitle,
         "movie_image": movieImage,
         "movie_access": movieAccessValues.reverse[movieAccess],
-        "movies_subtitle": List<dynamic>.from(moviesSubtitle.map((x) => x)),
+        "movies_subtitle": List<dynamic>.from(moviesSubtitle!.map((x) => x)),
         "description": description,
         "movie_duration": movieDuration,
         "release_date": releaseDate,
@@ -111,9 +111,9 @@ class VideoStreamingApp {
         "download_url": downloadUrl,
         "lang_id": langId,
         "language_name": languageName,
-        "genre_list": List<dynamic>.from(genreList.map((x) => x.toJson())),
+        "genre_list": List<dynamic>.from(genreList!.map((x) => x.toJson())),
         "related_movies":
-            List<dynamic>.from(relatedMovies.map((x) => x.toJson())),
+            List<dynamic>.from(relatedMovies!.map((x) => x.toJson())),
       };
 }
 
