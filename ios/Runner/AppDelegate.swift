@@ -11,3 +11,4 @@ import Flutter
     return super.application(application, didFinishLaunchingWithOptions: launchOptions)
   }
 }
+BTAppContextSwitcher.setReturnURLScheme("com.your-company.your-app.payments")
